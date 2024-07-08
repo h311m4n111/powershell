@@ -9,15 +9,15 @@ The goal of this script is simple: detect additions of users to Tier 0 groups e.
 This script is intended to run on your domain controller(s) as a scheduled task triggered on the occurence of any of the above events. Each time event 4728, 4732 or 4756 is detected, this script will be fired. Using some basic regex, we then filter the event's message to determine whether the targeted group is part of the Tier 0 list. If it is, an e-mail alert is immediatly sent out. When this script is in production, the delay between group addition and alert is roughly 5-10 seconds. There is one scheduled task per event. 
 	
 For example, a scheduled task for event 4728 is configurer like this:
-	* Triggers : 
-	  - On an event
-	  - Log : security
-	  - Source : Microsoft Windows security auditing
-	  - Event ID : 4728
-	* Actions : 
-	  - Start a program
-	  - Program / script : powershell
-	  - Add arguments (optional) : -Exec Bypass -nop -Command C:\scripts\Monitoring\detectEvent\detectEvent.ps1 4728
+1. Triggers : 
+   - On an event
+   - Log : security
+   - Source : Microsoft Windows security auditing
+   - Event ID : 4728
+2. Actions : 
+   - Start a program
+   - Program / script : powershell
+   - Add arguments (optional) : -Exec Bypass -nop -Command C:\scripts\Monitoring\detectEvent\detectEvent.ps1 4728
 			
 Each detected event is added to a text file "pastevents.txt" as to not alert on the same event multiple times.
 	
