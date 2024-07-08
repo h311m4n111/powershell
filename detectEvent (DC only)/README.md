@@ -10,14 +10,14 @@ This script is intended to run on your domain controller(s) as a scheduled task 
 	
 For example, a scheduled task for event 4728 is configurer like this:
 	* Triggers : 
-		- On an event
-		- Log : security
-		- Source : Microsoft Windows security auditing
-		- Event ID : 4728
+	  - On an event
+	  - Log : security
+	  - Source : Microsoft Windows security auditing
+	  - Event ID : 4728
 	* Actions : 
-		- Start a program
-		- Program / script : powershell
-		- Add arguments (optional) : -Exec Bypass -nop -Command C:\scripts\Monitoring\detectEvent\detectEvent.ps1 4728
+	  - Start a program
+	  - Program / script : powershell
+	  - Add arguments (optional) : -Exec Bypass -nop -Command C:\scripts\Monitoring\detectEvent\detectEvent.ps1 4728
 			
 Each detected event is added to a text file "pastevents.txt" as to not alert on the same event multiple times.
 	
@@ -31,7 +31,7 @@ N/A
 N/A
 # OUTPUTS
 E-mail sample (HTML format):
-	
+```	
 <html>
     <head>
         <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
@@ -52,6 +52,6 @@ E-mail sample (HTML format):
         <p>Group   : <strong>Domain admins</strong></p>
     </body>
 </html>
-	
+```	
 # NOTES
 N/A
