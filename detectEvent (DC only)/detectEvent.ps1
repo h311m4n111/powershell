@@ -30,7 +30,7 @@
 .EXAMPLE
     N/A
 .INPUTS
-    List of servers in a text file
+    N/A
 .OUTPUTS
     E-mail sample (HTML format):
 	
