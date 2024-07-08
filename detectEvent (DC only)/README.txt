@@ -1,6 +1,6 @@
-.SYNOPSIS
+#SYNOPSIS
     Detect malicious activity on critical domain groups
-.DESCRIPTION
+#DESCRIPTION
     The goal of this script is simple: detect additions of users to Tier 0 groups e.g. administration groups that if compromised would equate to a check-mate. Every time a user is added to a group, events for this are generated in the eventlog, specifically events:
 		- 4728 for global security groups
 		- 4732 for local security groups
@@ -22,15 +22,15 @@
 			
 	Each detected event is added to a text file "pastevents.txt" as to not alert on the same event multiple times.
 	
-	/!\ Please adjust the Tier0groups array to reflect your windows language. In its infinite wisdom, Microsoft, for some reason, does not name some of the groups the same way in every language.
+	**/!\ Please adjust the Tier0groups array to reflect your windows language. In its infinite wisdom, Microsoft, for some reason, does not name some of the groups the same way in every language.**
 
-	/!\ Please adjust your e-mail settings at the bottom of the script.
+	**/!\ Please adjust your e-mail settings at the bottom of the script.**
 	
-.EXAMPLE
+#EXAMPLE
     N/A
-.INPUTS
+#INPUTS
     N/A
-.OUTPUTS
+#.OUTPUTS
     E-mail sample (HTML format):
 	
 	<html>
@@ -54,5 +54,5 @@
     </body>
 </html>
 	
-.NOTES
+#NOTES
     N/A
