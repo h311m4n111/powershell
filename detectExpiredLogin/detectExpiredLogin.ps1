@@ -72,7 +72,7 @@ foreach($event in $events){
 </html>
 "@ | out-file -FilePath $report -Force
 
-#Envoyer le mail avec le résultat
+			#Send the e-mail
             $subject = "/!\ warn: an expired account was used in a logon attempt."
             $EmailFrom = "domain@mydomain.com" 
             $Smtpserver = "smtp.mydomain.com"
